@@ -12,4 +12,7 @@ window.onload = (function() {
 	Crafty.e("Enemy")
 		.attr({x: 700, y: 300, w: 100, h:40});
 
+	Crafty.e("Projectile")
+		.attr({x: 100, y: 100, w: 50, h: 50});
+
 });
