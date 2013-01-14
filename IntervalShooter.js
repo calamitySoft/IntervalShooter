@@ -21,4 +21,10 @@ window.onload = (function() {
 					.attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
 			}
 		});
+
+	var scoreTicker = Crafty.e("2D,Cavas,SpriteText")
+				.attr({x: 20, y: 20, w: 8 * 10, h: 8});
+	Crafty.load("angelsb.png");
+	scoreTicker.registerFont("angelsb", 8, "angelsb.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ&1234567890!?.");
+	scoreTicker.text("Score:");
 });

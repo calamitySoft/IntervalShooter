@@ -27,6 +27,7 @@ Crafty.c("Enemy", {
 		this.collision();
 		this.onHit("Projectile", function() {
 			this.destroy();
+			SCORE++;
 			});
 		this.bind("EnterFrame", function() {
 			this.x -= 3
