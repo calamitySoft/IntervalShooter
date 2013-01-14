@@ -1,10 +1,15 @@
-PROJECTILE_TRAVEL_SPEED = 5;
+var PROJECTILE_TRAVEL_SPEED = 5;
+var SCORE = 0;
 
 Crafty.c("Player", {
 	init: function() {
 		this.addComponent("2D,Canvas,Color,Fourway,Keyboard,Collision");
 		this.color("#0000FF");
 		this.fourway(10);
+		this.collision();
+		this.onHit("Enemy", function() {
+			this.destroy();
+		});
 		this.bind("KeyDown", function() {
 			if(this.isDown('Q'))
 				{
@@ -20,7 +25,6 @@ Crafty.c("Enemy", {
 		this.addComponent("2D, Canvas, Color, Collision");
 		this.color("#FF0000");
 		this.collision();
-		alert("Enemy being made!");
 		this.onHit("Projectile", function() {
 			this.destroy();
 			});

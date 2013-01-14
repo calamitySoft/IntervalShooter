@@ -13,11 +13,12 @@ window.onload = (function() {
 	
 	Crafty.bind("EnterFrame", function() {
 		frameCounter++;
-		if(frameCounter == 10 && Crafty.math.randomInt(0,10) < 8)
+		if(frameCounter == 20)
 			{
 			frameCounter = 0;
-			Crafty.e("Enemy")
-				.attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
+			if(Crafty.math.randomInt(0,10) < 6)
+				Crafty.e("Enemy")
+					.attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
 			}
 		});
 });
