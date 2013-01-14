@@ -12,3 +12,12 @@ Crafty.c("Enemy", {
 		this.color("#FF0000");
 		}
 	});
+
+Crafty.c("Projectile", {
+	interval: null,
+	init: function() {
+		this.addComponent("2D, Canvas, Color, Collision");
+		this.color("#00FF00");
+		this.collision();
+		}
+	});
