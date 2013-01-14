@@ -9,10 +9,15 @@ window.onload = (function() {
 	Crafty.e("Player")
 		.attr({x: 500, y: 300, w: 100, h: 40});
 
-	Crafty.e("Enemy")
-		.attr({x: 700, y: 300, w: 100, h:40});
-
-	Crafty.e("Projectile")
-		.attr({x: 100, y: 100, w: 50, h: 50});
-
+	var frameCounter = 0;
+	
+	Crafty.bind("EnterFrame", function() {
+		frameCounter++;
+		if(frameCounter == 10 && Crafty.math.randomInt(0,10) < 8)
+			{
+			frameCounter = 0;
+			Crafty.e("Enemy")
+				.attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
+			}
+		});
 });

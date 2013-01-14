@@ -20,8 +20,12 @@ Crafty.c("Enemy", {
 		this.addComponent("2D, Canvas, Color, Collision");
 		this.color("#FF0000");
 		this.collision();
+		alert("Enemy being made!");
 		this.onHit("Projectile", function() {
 			this.destroy();
+			});
+		this.bind("EnterFrame", function() {
+			this.x -= 3
 			});
 		}
 	});
