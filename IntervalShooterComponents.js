@@ -21,6 +21,7 @@ Crafty.c("Player", {
 	});
 
 Crafty.c("Enemy", {
+	audio: null,
 	init: function() {
 		this.addComponent("2D, Canvas, Color, Collision");
 		this.color("#FF0000");
@@ -43,6 +44,10 @@ Crafty.c("Projectile", {
 		this.collision();
 		this.bind("EnterFrame", function() {
 			this.x += PROJECTILE_TRAVEL_SPEED;
+			if(this.x > 1000)
+				{
+				this.destroy();
+				}
 			});
 		}
 	});
