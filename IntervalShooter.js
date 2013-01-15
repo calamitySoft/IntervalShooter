@@ -1,3 +1,16 @@
+Crafty.audio.add("C4", "C4.wav");
+Crafty.audio.add("C#4", "Csharp4.wav");
+Crafty.audio.add("D4", "D4.wav");
+Crafty.audio.add("D#4", "Dsharp4.wav");
+Crafty.audio.add("E4", "E4.wav");
+Crafty.audio.add("F4", "F4.wav");
+Crafty.audio.add("F#4", "Fsharp4.wav");
+Crafty.audio.add("G4", "G4.wav");
+Crafty.audio.add("G#4", "Gsharp4.wav");
+Crafty.audio.add("A5", "A5.wav");
+Crafty.audio.add("A#5", "Asharp5.wav");
+Crafty.audio.add("B5", "B5.wav");
+
 window.onload = (function() {
 
 	var WIDTH = 1000,
@@ -16,58 +29,45 @@ window.onload = (function() {
 		if(frameCounter == 20)
 			{
 			frameCounter = 0;
-			if(Crafty.math.randomInt(0,10) < 6)
-				var temp =	Crafty.e("Enemy")
-							.attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
+			if(Crafty.math.randomInt(0,10) < 6) {
+				var temp = Crafty.e("Enemy").attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
 				if(temp.y < 50)
-				{
-					//temp.audio = // octave
+				{temp.audio = "B5"; // major 7th
 				}
-				else if(temp.y < 100 && >= 50)
-				{
-					//temp.audio = //major 7th
+				else if(temp.y < 100 && temp.y >= 50)
+				{temp.audio = "A#5"; //major 7th
 				}
-				else if(temp.y < 150 && >= 100)
-				{
-					//temp.audio = //minor 7th
+				else if(temp.y < 150 && temp.y >= 100)
+				{temp.audio = "A5" //minor 7th
 				}
-				else if(temp.y < 200 && >= 150)
-				{
-					//temp.audio = // major 6th
+				else if(temp.y < 200 && temp.y >= 150)
+				{temp.audio = "G#4"; // major 6th
 				}
-				else if(temp.y < 250 && >= 200)
-				{
-					//temp.audio = //minor 6th
+				else if(temp.y < 250 && temp.y >= 200)
+				{temp.audio = "G4"; // minor 6th
 				}
-				else if(temp.y < 300 && >= 250)
-				{
-					//temp.audio = // perfect 5th
+				else if(temp.y < 300 && temp.y >= 250)
+				{temp.audio = "F#4" // perfect 5th
 				}
-				else if(temp.y < 350 && >= 300)
-				{
-					//temp.audio = // diminished 5th
+				else if(temp.y < 350 && temp.y >= 300)
+				{temp.audio = "F4" // diminished 5th
 				}
-				else if(temp.y < 400 && >= 350
-				{
-					//temp.audio = //perfect 4th
+				else if(temp.y < 400 && temp.y >= 350)
+				{temp.audio = "E4"; //perfect 4th
 				}
-				else if(temp.y < 450 && >= 400
-				{
-					//temp.audio = //major 3rd
+				else if(temp.y < 450 && temp.y >= 400)
+				{temp.audio = "D#4"; //major 3rd
 				}
-				else if(temp.y < 500 && >= 450
-				{
-					//temp.audio = //minor 3rd
+				else if(temp.y < 500 && temp.y >= 450)
+				{temp.audio = "D4"; //minor 3rd
 				}
-				else if(temp.y < 550 && >= 500
-				{
-					//temp.audio = //major 2nd
+				else if(temp.y < 550 && temp.y >= 500)
+				{temp.audio = "C#4" //major 2nd
 				}
 				else 
-				{
-					//temp.audio = //minor 2nd
+				{temp.audio = "C4"; //minor 2nd
 				}
-				
+			}
 			}
 		});
 

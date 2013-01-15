@@ -27,8 +27,9 @@ Crafty.c("Enemy", {
 		this.color("#FF0000");
 		this.collision();
 		this.onHit("Projectile", function() {
+			Crafty.audio.play(this.audio);			
+			SCORE++;			
 			this.destroy();
-			SCORE++;
 			});
 		this.bind("EnterFrame", function() {
 			this.x -= 3
