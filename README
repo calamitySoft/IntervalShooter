@@ -3,7 +3,14 @@ By Sam Von Ehren
 gamesketches.wordpress.com
 -----------------------------------------------------------
 
-This is a shooter designed to get players familiar with musical
-intervals. Players will fly around and have to shoot the right bullets
-at different enemies. Doing so while seeing the actual intervals displayed
-on screen will hopefully help increase their familiarity.
+This is a music creation experience that works within the
+framework of a shooter. The player flies around and shoots
+enemies, everytime they kill one it plays a note in the C
+Major scale. If the player gets hit by a ship the game ends.
+
+Controls
+-----------------------------------------------------------
+The player moves the ship with the standard ASDW controls or
+with the arrow keys. To fire a shot, the player presses Q.
+
+
