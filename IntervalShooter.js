@@ -10,6 +10,7 @@ Crafty.audio.add("G#4", "Gsharp4.wav");
 Crafty.audio.add("A5", "A5.wav");
 Crafty.audio.add("A#5", "Asharp5.wav");
 Crafty.audio.add("B5", "B5.wav");
+Crafty.audio.add("C5", "C5.wav");
 
 window.onload = (function() {
 
@@ -31,31 +32,31 @@ window.onload = (function() {
 			frameCounter = 0;
 			if(Crafty.math.randomInt(0,10) < 6) {
 				var temp = Crafty.e("Enemy").attr({x: 1000, y: Crafty.math.randomInt(0, 600), w: 100, h: 40});
-				if(temp.y < 50)
-				{temp.audio = "B5"; // major 7th
+				if(temp.y < 75)
+				{temp.audio = "C5"; // major 7th
 				}
-				else if(temp.y < 100 && temp.y >= 50)
-				{temp.audio = "A#5"; //major 7th
+				else if(temp.y < 150 && temp.y >= 75)
+				{temp.audio = "B5"; //major 7th
 				}
-				else if(temp.y < 150 && temp.y >= 100)
+				else if(temp.y < 225 && temp.y >= 150)
 				{temp.audio = "A5" //minor 7th
 				}
-				else if(temp.y < 200 && temp.y >= 150)
-				{temp.audio = "G#4"; // major 6th
+				else if(temp.y < 300 && temp.y >= 225)
+				{temp.audio = "G4"; // major 6th
 				}
-				else if(temp.y < 250 && temp.y >= 200)
-				{temp.audio = "G4"; // minor 6th
+				else if(temp.y < 375 && temp.y >= 300)
+				{temp.audio = "F4"; // minor 6th
 				}
-				else if(temp.y < 300 && temp.y >= 250)
-				{temp.audio = "F#4" // perfect 5th
+				else if(temp.y < 450 && temp.y >= 375)
+				{temp.audio = "E4" // perfect 5th
 				}
-				else if(temp.y < 350 && temp.y >= 300)
-				{temp.audio = "F4" // diminished 5th
+				else if(temp.y < 525 && temp.y >= 450)
+				{temp.audio = "D4" // diminished 5th
 				}
-				else if(temp.y < 400 && temp.y >= 350)
-				{temp.audio = "E4"; //perfect 4th
+				else if(temp.y < 600 && temp.y >= 525)
+				{temp.audio = "C4"; //perfect 4th
 				}
-				else if(temp.y < 450 && temp.y >= 400)
+				/*else if(temp.y < 450 && temp.y >= 400)
 				{temp.audio = "D#4"; //major 3rd
 				}
 				else if(temp.y < 500 && temp.y >= 450)
@@ -66,7 +67,7 @@ window.onload = (function() {
 				}
 				else 
 				{temp.audio = "C4"; //minor 2nd
-				}
+				}*/
 			}
 			}
 		});
