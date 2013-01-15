@@ -20,12 +20,15 @@ window.onload = (function() {
 	Crafty.init(WIDTH, HEIGHT);
 	Crafty.background("#000000");
 
+	Crafty.scene("gameplay", function() {
 	Crafty.e("Player")
 		.attr({x: 500, y: 300, w: 100, h: 40});
 
 	var frameCounter = 0;
+
+	var enemyManager = Crafty.e("2D");
 	
-	Crafty.bind("EnterFrame", function() {
+	enemyManager.bind("EnterFrame", function() {
 		frameCounter++;
 		if(frameCounter == 20)
 			{
@@ -56,26 +59,19 @@ window.onload = (function() {
 				else if(temp.y < 600 && temp.y >= 525)
 				{temp.audio = "C4"; //perfect 4th
 				}
-				/*else if(temp.y < 450 && temp.y >= 400)
-				{temp.audio = "D#4"; //major 3rd
-				}
-				else if(temp.y < 500 && temp.y >= 450)
-				{temp.audio = "D4"; //minor 3rd
-				}
-				else if(temp.y < 550 && temp.y >= 500)
-				{temp.audio = "C#4" //major 2nd
-				}
-				else 
-				{temp.audio = "C4"; //minor 2nd
-				}*/
 			}
 			}
 		});
+	});
 
-	/*var scoreTicker = Crafty.e("2D, Cavas, SpriteText")
-				.attr({x: 20, y: 20, w: 8 * 10, h: 8});
+	Crafty.scene("gameOver", function() {
+		var textHandler = Crafty.e("2D,DOM,Text,Keyboard").attr({x: 500, y:300}).text("Press 'r' to restart").textColor("#FF0000");
+		textHandler.bind("KeyDown", function() {
+			if(this.isDown('R')) {
+				Crafty.scene("gameplay"); }
+			});
+		});
 
-	Crafty.load("angelsb.png");
-	scoreTicker.registerFont("angelsb", 8, "angelsb.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ&1234567890!?.");
-	scoreTicker.text("Score:");*/
+	Crafty.scene("gameplay");
+
 });

@@ -1,5 +1,4 @@
 var PROJECTILE_TRAVEL_SPEED = 5;
-var SCORE = 0;
 
 Crafty.c("Player", {
 	init: function() {
@@ -8,6 +7,7 @@ Crafty.c("Player", {
 		this.fourway(10);
 		this.collision();
 		this.onHit("Enemy", function() {
+			Crafty.scene("gameOver");
 			this.destroy();
 		});
 		this.bind("KeyDown", function() {
@@ -27,8 +27,7 @@ Crafty.c("Enemy", {
 		this.color("#FF0000");
 		this.collision();
 		this.onHit("Projectile", function() {
-			Crafty.audio.play(this.audio);			
-			SCORE++;			
+			Crafty.audio.play(this.audio);
 			this.destroy();
 			});
 		this.bind("EnterFrame", function() {
